@@ -73,7 +73,7 @@ function App() {
       setMovies(response.data.movies)
     })
     facetService(`/facets?text=${text}&genres=${genres}&certificates=${certificates}`).then(response => {
-      setFacets(response.data)
+      setFacets(response.data) 
     })
   }
 
@@ -155,10 +155,10 @@ function App() {
           movies?.map(movie => {
             return <div>
               <figure class="card card-product-grid" style={{ 'flex-direction': 'inherit' }}>
-                <div style={{ 'width': '10%', 'height': '10%' }} >
-                  <img src={movie?.avatar} /></div>
+                <div>
+                  <img src={movie?.avatar} style={{ 'width':'140px', 'height': '100%' }} /></div>
                 <figcaption class="info-wrap">
-                  <div class="fix-height" style={{ 'height': '100%' }} >
+                  <div class="fix-height" style={{ 'marginLeft':'10px', 'height': '100%' }} >
                     <strong>{movie?.title}</strong>
                     <div class="mt-2">
                       <span class="font-weight-bold">Rating: </span>
