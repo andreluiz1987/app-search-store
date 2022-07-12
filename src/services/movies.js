@@ -43,4 +43,32 @@ function autocomplete(urlSearch) {
     })
 }
 
-export { facets, search, autocomplete };
+function searchMLT(urlSearchMLT) {
+    return new Promise((res, reject) => {
+        api
+            .get(urlSearchMLT)
+            .then((response) => {
+                res(response)
+                return response
+            })
+            .catch((err) => {
+                reject(err);
+            });
+    })
+}
+
+function searchByCode(urlSearchByCode) {
+    return new Promise((res, reject) => {
+        api
+            .get(urlSearchByCode)
+            .then((response) => {
+                res(response)
+                return response
+            })
+            .catch((err) => {
+                reject(err);
+            });
+    })
+}
+
+export { facets, search, autocomplete, searchMLT, searchByCode };

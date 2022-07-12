@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './css/custom.css'
 import { facets as facetService, search as searchService, autocomplete as autocompleteService } from "./services/movies";
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const [facets, setFacets] = useState();
@@ -10,6 +11,7 @@ function App() {
   const [suggestions, setSuggestions] = useState([]);
   const [genres, setGenres] = useState([]);
   const [certificates, setCertificates] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     facetService("/facets?text=").then(response => setFacets(response.data));
@@ -53,6 +55,8 @@ function App() {
     })
   }
 
+  const onClickMovie = (code) => { navigate(`/movies/${code}`, { replace: "/" })}
+
   const onChangeHandlerFacets = (filter, type) => {
     if (type == "genres") {
       if (genres.includes(filter)) {
@@ -73,7 +77,7 @@ function App() {
       setMovies(response.data.movies)
     })
     facetService(`/facets?text=${text}&genres=${genres}&certificates=${certificates}`).then(response => {
-      setFacets(response.data) 
+      setFacets(response.data)
     })
   }
 
@@ -154,11 +158,11 @@ function App() {
         {
           movies?.map(movie => {
             return <div>
-              <figure class="card card-product-grid" style={{ 'flex-direction': 'inherit' }}>
+              <figure onClick={() => onClickMovie(movie.code)} class="card card-product-grid" style={{ 'flex-direction': 'inherit', 'cursor': 'pointer' }}>
                 <div>
-                  <img src={movie?.avatar} style={{ 'width':'140px', 'height': '100%' }} /></div>
+                  <img src={movie?.avatar} style={{ 'width': '140px', 'height': '100%' }} /></div>
                 <figcaption class="info-wrap">
-                  <div class="fix-height" style={{ 'marginLeft':'10px', 'height': '100%' }} >
+                  <div class="fix-height" style={{ 'marginLeft': '10px', 'height': '100%' }} >
                     <strong>{movie?.title}</strong>
                     <div class="mt-2">
                       <span class="font-weight-bold">Rating: </span>
