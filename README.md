@@ -29,7 +29,7 @@ For more information about api [check here](https://github.com/andreluiz1987/sea
 
 ## More information
 
-For more informatrion visit post [Building Search API with ElasticSearch — Part 10: Front-End](https://medium.com/@andre.luiz1987/building-search-api-with-elasticsearch-part-10-front-end-eded65f6e0a8) 
+For more information visit post [Building Search API with ElasticSearch — Part 10: Front-End](https://medium.com/@andre.luiz1987/building-search-api-with-elasticsearch-part-10-front-end-eded65f6e0a8) 
 
 
 <br>
