@@ -20,6 +20,13 @@ This project was developed using react-js
 <br>
 <br>
 
+## API Search Store
+
+For more information about api [check here](https://github.com/andreluiz1987/search-store)
+
+<br>
+<br>
+
 ## More information
 
 Para obter mais informacoes visite o post [Building Search API with ElasticSearch — Part 10: Front-End](https://medium.com/@andre.luiz1987/building-search-api-with-elasticsearch-part-10-front-end-eded65f6e0a8) 
